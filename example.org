@@ -1,0 +1,179 @@
+# -*- mode: org; fill-column: 60; comment-column: 50; -*-
+#+STARTUP: showall indent hidestars
+#+TITLE: Governance
+#+AUTHOR: Mikhail Rigidus Glukhov
+#+OPTIONS: H:2 toc:nil num:nil
+#+LATEX_CLASS: beamer
+#+LATEX_HEADER: \usepackage[english,main=russian]{babel}
+#+LATEX_CLASS_OPTIONS: [presentation]
+#+BEAMER_THEME: Madrid
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+
+* Intro
+** Definitions
+What is..
+*** Governance                                                    :B_block:
+:PROPERTIES:
+:BEAMER_ENV: block
+:BEAMER_ACT: <2->
+:END:
+ ...is when people do what you want
+*** Disturbed Governance                                          :B_block:
+ :PROPERTIES:
+ :BEAMER_ENV: block
+ :BEAMER_ACT: <3->
+ :END:
+...is when people do what THEY want
+*** Distributed Governance                                        :B_block:
+ :PROPERTIES:
+ :BEAMER_ENV: block
+ :BEAMER_ACT: <4->
+ :END:
+ ..but *@@beamer:<2->@@not all* they want :)
+* Example of..
+** Example of platforms                                          :B_columns:
+*** Solutions
+  :PROPERTIES:
+  :BEAMER_env: columns
+  :END:
+**** Solutions                                                  :B_column:
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.3
+:END:
+- Aragon
+- Colony
+- DAOHaus
+- Compound
+- MakerDAO
+- DAOStack
+**** TODO Features                                              :B_column:
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.6
+:END:
+
+#+BEAMER:\only<1>{AragonOS}
+#+BEAMER:\only<2>{Colony}
+
+#+BEAMER:\begin{itemize}
+
+#+BEAMER:\item<only@1> Tokens for Voting
+#+BEAMER:\item<only@1> Treasure management
+#+BEAMER:\item<only@1> Contract calls
+#+BEAMER:\item<only@1> Permissions
+
+#+BEAMER:\item<only@2> Reputation (in branch)
+#+BEAMER:\item<only@2> Payments (reccuring, for teams)
+#+BEAMER:\item<only@2> Budgeting, rewards distrubution, tasks
+#+BEAMER:\item<only@2> Contract calls
+#+BEAMER:\item<only@2> Permissions
+
+#+BEAMER:\item<only@2> Fundraising
+#+BEAMER:\item<only@2> Teams
+#+BEAMER:\item<only@2> Autority
+#+BEAMER:\item<only@2> Decision making
+#+BEAMER:\item<only@2> Arbitration
+#+BEAMER:\item<only@2> Recovery mode
+
+
+#+BEAMER:\end{itemize}
+
+
+*** Center block                                       :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:BEAMER_ACT: <4->
+:END:
+#+beamer: \vspace{1cm}
+
+#+BEAMER:\centering
+#+BEAMER:\only<2>{Avoid voting where possibly}
+#+BEAMER:\only<3>{Common Features}
+
+#+beamer: \vspace{1cm}
+* Deep into..
+** Aragon
+*** Governance Model - Voting
+- Tokens - voting power
+- Threshold - what % of the votes need to be positive for
+  the vote to be executed
+- Quorum - minimum % of all token supply that needs to
+  approve in order for the voting to be execute
+- Voting time
+- Execution script
+*** Houston we have a problem..
+- Voter apathy (because voting is expensive)
+- We use it completely wrong (probably)
+*** Rule-making power
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:BEAMER_ACT: <2->
+:END:
+*@@beamer:<2->@@Rule-making power* - the power of an actor
+to constitute or re-program a rules according to its values
+and specific interests.
+** Colony
+*** How it works
+
+В обычных ораганизациях голосование необходимо крайне редко
+
+Как мы получаем решение без голосования в децентрализованных
+организациях?
+- Если мы можем подтвердить факт владения токенами голосования
+  на момент интервала голосования
+- Если мы можем подписать голос / или делегация
+- Если никто не возражает против решения
+
+И еще у нас есть пороговые подписи. И уже результат
+голосования мы можем положить на блокчейн
+
+https://www.youtube.com/watch?v=YXpje1whcZA&t=1009s
+
+Мы можем делать изменения в репутации после
+голосования. Иначе люди будут ставить на голосование плохие
+решения, надеясь что хоть одно пройдет
+** DaoStack
+*** How it works
+
+#+BEGIN_EXPORT latex
+\begin{table}
+\begin{tabular}{l | c | c | c | c }
+Competitor Name & Swim & Cycle & Run & Total \\
+\hline \hline
+John T & 13:04 & 24:15 & 18:34 & 55:53 \onslide<2-> \\
+Norman P & 8:00 & 22:45 & 23:02 & 53:47 \onslide<3->\\
+Alex K & 14:00 & 28:00 & n/a & n/a \onslide<4->\\
+Sarah H & 9:22 & 21:10 & 24:03 & 54:35
+\end{tabular}
+\caption{Triathlon results}
+\end{table}
+#+END_EXPORT
+
+** DaoHaus
+*** How it works
+
+#+BEGIN_EXPORT latex
+Something before\\
+\bigskip
+$%
+B\left(%
+\only<1>{A_2[i]}%
+\only<2>{A_L[i]}%
+\right) =%
+\only<1>{C_1 + C_2 \vphantom{\displaystyle\sum_{k=1}^{L} C_k}}%
+\only<2>{\displaystyle\sum_{k=1}^{L} C_k}%
+\quad \text{text here }%
+\only<1>{a,b,c,}%
+\only<2>{a,b,c,\ldots,z}
+$
+#+END_EXPORT
+* Little abstraction
+**
+
+Футархия решает проблему "политической апатии". Если в
+привычной демократии шанс того, что ваш голос повлияет на
+вопрос голосования, крайне мал, то здесь вы потеряете или
+приобретёте деньги — в зависимости от исхода вашего решения.
+
+Рынок предсказаний
