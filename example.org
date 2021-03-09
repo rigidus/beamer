@@ -10,6 +10,8 @@
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
 
 * Intro
+** Начнем с шуточек                                               :noexport:
+- Decentralized / Distributed
 ** Definitions
 What is..
 *** Governance                                                    :B_block:
@@ -31,7 +33,16 @@ What is..
  :END:
  ..but *@@beamer:<2->@@not all* they want :)
 * Example of..
+** Пока еще нет своего айфона для DAO                             :noexport:
+- в меру своего воображения
+- идеи - стоит рассмотреть
 ** Example of platforms                                          :B_columns:
+*** Я выбрал 5                                                   :noexport:
+- Мы проголосовали и я решил
+- Трагедия Общин и Пиратский Кодекс
+- Рынки предсказаний
+- Либа для всего
+- Инфраструктурку подвезли
 *** Solutions
   :PROPERTIES:
   :BEAMER_env: columns
@@ -39,23 +50,27 @@ What is..
 **** Solutions                                                  :B_column:
 :PROPERTIES:
 :BEAMER_env: block
-:BEAMER_col: 0.3
+:BEAMER_col: 0.35
 :END:
-- Aragon
-- Colony
-- DAOHaus
-- Compound
-- MakerDAO
-- DAOStack
-**** TODO Features                                              :B_column:
+#+BEAMER:\only<1>{>>AragonOS}
+#+BEAMER:\only<2,3,4,5>{AragonOS}
+
+#+BEAMER:\only<2>{>>DaoHaus and Moloch}
+#+BEAMER:\only<1,3,4,5>{DaoHaus and Moloch}
+
+#+BEAMER:\only<3>{>>Gnosis}
+#+BEAMER:\only<1,2,4,5>{Gnosis}
+
+#+BEAMER:\only<4>{>>DAOStack}
+#+BEAMER:\only<1,2,3,5>{DAOStack}
+
+#+BEAMER:\only<5>{>>Colony}
+#+BEAMER:\only<1,2,3,4>{Colony}
+**** Features                                                   :B_column:
 :PROPERTIES:
 :BEAMER_env: block
 :BEAMER_col: 0.6
 :END:
-
-#+BEAMER:\only<1>{AragonOS}
-#+BEAMER:\only<2>{Colony}
-
 #+BEAMER:\begin{itemize}
 
 #+BEAMER:\item<only@1> Tokens for Voting
@@ -63,37 +78,39 @@ What is..
 #+BEAMER:\item<only@1> Contract calls
 #+BEAMER:\item<only@1> Permissions
 
-#+BEAMER:\item<only@2> Reputation (in branch)
+#+BEAMER:\item<only@2> Guild Reputation (in branch)
 #+BEAMER:\item<only@2> Payments (reccuring, for teams)
 #+BEAMER:\item<only@2> Budgeting, rewards distrubution, tasks
 #+BEAMER:\item<only@2> Contract calls
 #+BEAMER:\item<only@2> Permissions
 
-#+BEAMER:\item<only@2> Fundraising
-#+BEAMER:\item<only@2> Teams
-#+BEAMER:\item<only@2> Autority
-#+BEAMER:\item<only@2> Decision making
-#+BEAMER:\item<only@2> Arbitration
-#+BEAMER:\item<only@2> Recovery mode
+#+BEAMER:\item<only@3> Prediction Markets
+#+BEAMER:\item<only@3> Conditional Tokens
+#+BEAMER:\item<only@3> Futarchy
+
+#+BEAMER:\item<only@4> Sandbox for DAO developing
+#+BEAMER:\item<only@4> Full stack of DAO-contracts
+#+BEAMER:\item<only@4> Modularity
+#+BEAMER:\item<only@4> Many configurable parameters
+#+BEAMER:\item<only@4> Genesis protocol
+#+BEAMER:\item<only@4> Infrastucture (js, db...)
+
+#+BEAMER:\item<only@5> Avoid voting where possibly
+#+BEAMER:\item<only@5> Domains (owns budgets)
+#+BEAMER:\item<only@5> Reputation
+#+BEAMER:\item<only@5> Token weighted voting
+#+BEAMER:\item<only@5> Veto
 
 
 #+BEAMER:\end{itemize}
-
-
-*** Center block                                       :B_ignoreheading:
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:BEAMER_ACT: <4->
-:END:
-#+beamer: \vspace{1cm}
-
-#+BEAMER:\centering
-#+BEAMER:\only<2>{Avoid voting where possibly}
-#+BEAMER:\only<3>{Common Features}
-
-#+beamer: \vspace{1cm}
 * Deep into..
-** Aragon
+** Aragon - Distributed Voting
+*** Это нам знакомо, но есть проблемы                            :noexport:
+- почему я не хочу голосовать?
+- мой стейк не зависит от голоса
+- кто устанавливает правила?
+- и кто пишет код?
+- ...многое за кадром
 *** Governance Model - Voting
 - Tokens - voting power
 - Threshold - what % of the votes need to be positive for
@@ -103,77 +120,551 @@ What is..
 - Voting time
 - Execution script
 *** Houston we have a problem..
-- Voter apathy (because voting is expensive)
+- Voter apathy (because voting is expensive and changes nothing)
 - We use it completely wrong (probably)
 *** Rule-making power
 :PROPERTIES:
 :BEAMER_env: ignoreheading
 :BEAMER_ACT: <2->
 :END:
-*@@beamer:<2->@@Rule-making power* - the power of an actor
-to constitute or re-program a rules according to its values
-and specific interests.
-** Colony
+*Rule-making power* - the power of an actor to constitute or
+re-program a rules according to its values and specific
+interests
+** DAOHaus & Moloch - Beating the Tragedy of the Commons
+*** Преодоление трагедии общин                                   :noexport:
+- OSS - пример преодоления
+- платный вход
+- рекомендации
+- голосование есть (платно), но..
+- я с ним не согласен - RageQuit
+- кворум не нужен - и так безопасно
+- слишком плохая идея = 30%
+- кик с корпы
+- на что похоже? - веселый роджер
+*** Thesis
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- Tribute for membership (sponsorship for enter)
+- Sponsorhip - Paid proposals (to the processor of
+  proposal - preventing spam)
+- Voting power = % of share (non-transferable!)
+- RageQuit - There’s a *grace period* after the voting
+  proposal during which anyone *who voted “no”* on the
+  proposal (or didn’t vote at all) can rage quit.
+- If the proposal passed, then the applicant will be able to
+  withdraw the funds granted to them. If the proposal fails
+  any tribute offered will be returned to the applicant.
+- Moloch’s don’t care about quorums
+- The proposal will also fail if more than 30% of the DAO
+  rage quits during the proposal’s grace period.
+- GuildKick - proposal for forced Rage Quit
+** Gnosis DAO (DEX with ring trades and conditional tokens)
+*** Предсказания и условные токены                               :noexport:
+- как это работает?
+- решает voting apathy
+- голосование на снапшотах
+- футархия
+- но - власть модератора
+*** Phases
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- Phase 1 Ideation - Post created on the Gnosis Forum
+- Phase 2 Specification - Gnosis Improvement Proposal
+- Phase 3 Consensus - yes-voting quorum of a minimum of
+  4% of the circulating supply of GNO
+*** Consensus phase
+- Omen Prediction Markets - calculates the projected price
+  impact on GNO of the proposal’s outcome.
+- GnosisDAO Snapshot poll - must be created that contains
+  the proposal text as well as a link to the GIP post on the
+  Gnosis Forum, and it must include the option "Make no
+  changes"
+*** Features
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- Elements of futarchy
+- Snapshot
+
+*Moderator's power* - the power of the actor to direct
+discussion of issues and to apply punishment to those who
+discuss issues
+** DAOStack - library of DAO Contracts
+*** Архитектура "прямыми руками"                                 :noexport:
+- можно собрать под себя
+- и есть примеры
+- (но нет юзеров - и это норм)
+- зато есть OLAP на графах
+*** Features and Layers
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+...to coordinate a large group of people to make decisions
+collectively...
+- Collaboration to produce an Outcome (“Work”)
+- Asset Management
+- Curation
+- All of the Above
+#+ATTR_LATEX: :width 0.7\textwidth
+file:DAOStackArch.png
+** DAOStack Genesis Protocol (1)
+*** Гляньте как красиво                                          :noexport:
+- Настроить можно все
+*** Fully castomuzed voting
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- *Activation Time* - when proposals in this plugin can first
+  be submitted
+- *Boosted Vote Period Limit* - The length of time boosted
+  proposals are open for voting
+- *DAO Bounty Constant* - This is multiplied by the average
+  downstake on boosted proposals to calculate how large the
+  DAO’s automatic downstake should be.
+- *Proposal Reputation Reward* - The amount of voting power
+  given out as a reward for submitting a proposal that the
+  DAO passes.
+- *Minimum DAO Bounty* - The minimum amount of GEN a DAO will
+  stake when automatically downstaking each proposal.
+- *Pre-Boosted Vote Period Limit* - The length of time that a
+  proposal must maintain a confidence score (upstake divided
+  by downstake) higher than the boosting threshold to become
+  eligible for boosting.
+- Queued Vote Period Limit - The amount of time non-boosted
+  proposals (pre-boosted or regular queue) are open for voting.
+** DAOStack Genesis Protocol (2)
+*** Обьясняя правила игры                                        :noexport:
+- Пользователи поймут
+- (если DAOStack будет жить)
+*** Fully castomuzed voting
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- *Queued Vote Required* - The percentage of all Reputation
+  (voting power) that must be voting yes or no for a
+  non-boosted proposal for it to pass or fail.
+- *Quiet Ending Period* - The length of time a vote’s
+  potential result needs to stay the same in order to be
+  confirmed as the official result.
+- *Threshold Constant* - Controls how quickly the required
+  confidence score for boosting goes up as the number of
+  currently boosted proposals rises (threshold = threshold
+  constant ^ number of currently boosted proposals).
+- *Voters Reputation Loss* - The percentage of a voter’s
+  voting power they stand to lose if they vote against the
+  DAO’s eventual decision on a non-boosted proposal. If you
+  have 100 Reputation and this parameter is set to 4%, you
+  stand to lose 4 Reputation.
+** DAOStack Infrastructure
+*** Из чего весь бутерброд                                       :noexport:
+- Все по науке (слоям)
+- можно дописать
+- есть сабграф
+- и даже фронтенд
+- а еще - пример реализации
+- не хватает маркетинга, но это гут
+*** Arch components
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- infra.sol
+  - voting machines
+  - voting rights management, for example *reputation votes*
+- arc.sol - deploy costs elimination
+  - avatar
+  - token
+  - pliguns
+  - global constraints
+  - controller
+- subgraph
+- frontend library Arc.js for interaction with:
+  - arc-smartcontracts (voting, proposals, etc)
+  - subgraph DAOstack: (database infrastructure)
+- applications (dapps)
+  - Common
+  - Alchemy - example of UI for DAO
+** DAOStack - Internals
+*** MVC на стероидах                                             :noexport:
+- констрейнты - это аспекты
+- вроде расширяемо
+- voting machine = FSM
+- с этим попытаемся взлететь
+*** MVC
+#+ATTR_LATEX: :width 1.0\textwidth
+file:DAOStackInternals.jpg
+** Colony - overview
+*** К шапочному разбору                                          :noexport:
+- зато понятно
+- число данбара
+- у отделов есть бюджет
+- и согласие
+- и репутация
+- репутация полезна если она влияет
+*** Russian doll
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- Colony’s DAOs are shared by people with common goals..
+- ..but these DAOs can be split into domains and subdomains
+*** Domains
+- The domain has a purposes and budget
+- Those purposes are translated into tasks
+- Member can have reputation in domains
+- Disputes
+- Contract calls
+- Token weigheted and reputation voting
+*** Reputation
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+Unlike Aragon or DAOstack, which a revote-driven due to the
+use of voting systems to allocate resources, Colony has a
+meritocratic system, because the only way to increase the
+member’s influence is working for the organisation
+(i.e. work-driven).
+** Colony - How it works
+*** Они чувствуют нашу боль                                      :noexport:
+- узкий круг ограниченных людей
+- избегаем голосования
+- репутация работает (хитро)
+- ставка на свое действие
+- подешевле (offchain)
+- ..и экосистема (пока нет)
 *** How it works
-
-В обычных ораганизациях голосование необходимо крайне редко
-
-Как мы получаем решение без голосования в децентрализованных
-организациях?
-- Если мы можем подтвердить факт владения токенами голосования
-  на момент интервала голосования
-- Если мы можем подписать голос / или делегация
-- Если никто не возражает против решения
-
-И еще у нас есть пороговые подписи. И уже результат
-голосования мы можем положить на блокчейн
-
-https://www.youtube.com/watch?v=YXpje1whcZA&t=1009s
-
-Мы можем делать изменения в репутации после
-голосования. Иначе люди будут ставить на голосование плохие
-решения, надеясь что хоть одно пройдет
-** DaoStack
-*** How it works
-
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- Domains - the solution to the scalability problem
+- By avoiding a vote, all decisions are approved by default,
+  unless someone has any objections, in which case they are
+  discussed and decided by a vote.
+- Reputation is a non-transferable token, the value of which
+  is determined by the non-owner.
+  - Contrubutions
+  - Assessments. Because conducting an assessment is worth
+    reputation regardless of the result; it is beneficial
+    only to participants with high indicators of their own
+    reputation.
+- Actions require a stake; if successful, reputation grows
+- Reputation is calculated off-chain by miners who also earn
+  reputation with this
+- Ecosystem: from DAO to DAO
+* Who use it
+** Есть кто дома (в DAO)?                                         :noexport:
+- либо это никому не надо (врядли)
+- либо оно еще не выстрелило
+- но о экосистеме можно не говорить
+- royal statistical society:
+- йейтс, пятница и генрихи тюдоров
+** User's capacity
 #+BEGIN_EXPORT latex
 \begin{table}
 \begin{tabular}{l | c | c | c | c }
-Competitor Name & Swim & Cycle & Run & Total \\
+ & Release & DAOs  \\
 \hline \hline
-John T & 13:04 & 24:15 & 18:34 & 55:53 \onslide<2-> \\
-Norman P & 8:00 & 22:45 & 23:02 & 53:47 \onslide<3->\\
-Alex K & 14:00 & 28:00 & n/a & n/a \onslide<4->\\
-Sarah H & 9:22 & 21:10 & 24:03 & 54:35
+Aragon & Oct 2018 & 1459  \\
+DAOStack & April 2019 & 22 \\
+DAOHaus and Moloch & Aug 2019 & 127\\
+Colony & Feb 2020 & ?
 \end{tabular}
-\caption{Triathlon results}
 \end{table}
+\begin{center}
+Table 1: Summary at the date of June 5th of 2020
+\end{center}
 #+END_EXPORT
-
-** DaoHaus
-*** How it works
-
-#+BEGIN_EXPORT latex
-Something before\\
-\bigskip
-$%
-B\left(%
-\only<1>{A_2[i]}%
-\only<2>{A_L[i]}%
-\right) =%
-\only<1>{C_1 + C_2 \vphantom{\displaystyle\sum_{k=1}^{L} C_k}}%
-\only<2>{\displaystyle\sum_{k=1}^{L} C_k}%
-\quad \text{text here }%
-\only<1>{a,b,c,}%
-\only<2>{a,b,c,\ldots,z}
-$
-#+END_EXPORT
-* Little abstraction
-**
-
-Футархия решает проблему "политической апатии". Если в
-привычной демократии шанс того, что ваш голос повлияет на
-вопрос голосования, крайне мал, то здесь вы потеряете или
-приобретёте деньги — в зависимости от исхода вашего решения.
-
-Рынок предсказаний
+* Goverments and DAO Perspectives
+** Learning DAO by HARD WAY
+#+ATTR_LATEX: :width 1.0\textwidth
+file:comparision.jpg
+** Perspectives - (bad) solution in search of a problem
+*** Решение в поисках проблемы                                   :noexport:
+- не на том зарабатываем
+- конфликт интересов с вендором
+- неподходящие механизмы
+- нужна репутация с демереджем
+- до DAO надо дорасти
+- никто не верит - а что делать?
+- вендор лок в ключевой части
+- все складывается так удачно
+- что пора открывать свой стартап
+*** Problems
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+Problems???
+*** Governance isn't needed if it doesn't add value
+- DAO's marketplaces increase the coordination costs because
+  they earn money on the decision-making mechanism
+- Colony’s key features is “lazy consensus” — a
+  protocol-level assumption that many key decisions are made
+  at the social layer of a DAO, and that votes are only
+  necessary when a member objects.
+- We need a reputation mechanism with demurrage that
+  reflects the skills and capabilities of the members.
+- We already have enough DAOs - Dictatorial Autocratic
+  Organization (the first stage of a ordinary startup)
+- More accountability is needed. A project without
+  accountability is a promise
+- Vendor-lock is invalid
+** Governance: kinds of.. Power and Incentives
+*** Слишком много видов власти                                   :noexport:
+- правила с большинством понятны
+- но можно злоупотреблять
+- вето от фаундера - это ок
+- но от мембера - это саботаж
+- не нравится - чемодан, вокзал...
+*** Combination
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+The combination of incentives and accepted constraints
+determines the motivation to participate
+*** Power of the majority
+I agree to act in the interests of the group, even against
+my own interests, if the majority requires such an action
+*** Power to make a proposal
+I agree that only my delegate can make a proposal (Delegated
+Democracy)
+*** Power to reject (sabotage) proposal
+Our founder has veto power - he can reject any proposal
+*** Power to opt out.
+I leave the group if I don't like the proposal
+** Goverments: dark side of power
+*** Это еще не все!                                              :noexport:
+- власть распределять
+- кто устанавливает правила?
+- главный - снабженец
+- модератор рулит
+- власть привратника
+- бьет majority
+- хочется понимать все это на берегу
+*** Power to distribute.
+Our treasurer can block financing of any proposal
+*** Power to regulate (make rules)
+If gentlemen lose, they change the rules of the game
+*** Power of Procurement
+Project will not be executed only if it is supported by a
+procurement
+*** Power of Moderator
+If I can regulate the discussion, I can determine the
+viable of the proposal
+*** Power of Gatekeeper
+it is easy to get the majority if I allow my supporters only
+to come in
+** Governance: Incentives
+*** Мотивация :noexport:
+- Чем мотивированы люди?
+- заработать на росте shares
+- рост репутации (хабр)
+- распределение прибылей
+- Чем они демотивированы?
+- возможностью обмана
+- Какие у них стратегии действий?
+- взаимное гарантированное уничтожение
+- японский вариант
+- это условие присоединения
+*** Inventives
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- Increase the value of the deposit
+- Reputation growth
+- Dividends
+*** Incentive strategies
+- Mutuall guaranteed destruction
+** Synthesis matrix - concept clustering
+*** Систематизируем беспорядок                                   :noexport:
+- организация состоит из людей
+- люди играют роли
+- мотивация определяет поведение
+- внутри конкретных ситуаций
+- (назовем их аспектами)
+- и все это - на разных уровнях
+- лучше бы все это было в коде
+- но пока это не так
+- значит правила должны быть ясны
+- и не нарушаемы
+- и это еще надо объяснить
+- нас интересют 3 слоя
+*** Levels
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.3
+:END:
+- *@@beamer:<2->@@Software*
+- *@@beamer:<2->@@Protocol*
+- Network
+- *@@beamer:<2->@@Community*
+- Ecosystem
+*** Aspects
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.65
+:END:
+- task/op/release management
+- development/decision process
+- conflict resolution
+- rule changing
+- use of information and tools.
+*** Context
+- Roles (foundation, developers and miners, holders)
+- Incentives (motivational factors involved for the roles)
+- Membership (participation and membershipare managed
+  for the roles)
+- Communication
+- Decision making
+** Example of analysis - Etherium Roles
+*** Демонстрация на примере                                      :noexport:
+- применимо для:
+  - OSS проектов (linux)
+  - обычных организаций
+  - и даже государств
+  - строй - это паттерн, с которым
+  - мы знакомы (монархия, итп)
+- вернемся к слайду ролей (!)
+  - и посмотрим на уровни (не все)
+*** Software Development roles
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.47
+:END:
+- Contributors
+- Maintainers
+- EIP editors
+*** Protocol roles
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.47
+:END:
+- Miners
+- Full nodes
+- Lightweight nodes
+*** Community roles
+- Token-holders
+- Ethereum Foundation
+- Industry organizations
+- Fellowships
+- Community figureheads
+- Online moderators
+** Example of analysis - Etherium Incentives
+*** Чего мы хотим?                                               :noexport:
+- Комьюнити
+  - Комьюнити хочет роста курса
+  - Организации хотят dApps
+  - Академия хочет грантов
+- Разрабы
+  - Святые люди..
+- Майнеры
+ - rewads и дешевого электричества
+ - на картинке это как-то так...
+*** Community members
+Most of the community is incentivized by speculating on the
+increase of value of Ether, industry organizations are
+seeking the benefits of Ethereum's applications in the long
+term, support from the community toward development by
+fellowships.
+*** Developers
+Developers are incentivized by a potential value increase of
+Ether from their contributions, contributors usually work on
+a voluntary basis for fun and social recognition, maintainers
+are sometimes hired by EF
+*** Protocol members
+Miners have a monetary incentive in block rewards (3ETH)
+including transaction fees. Full nodes can be necessary to
+run for a business activities. Other incentives to run full
+nodes include network support and security
+reasons.
+** Miners Incentiuves by example
+#+ATTR_LATEX: :width 0.5\textwidth
+file:miners.jpg
+** Example of analysis - Etherium Membership
+*** Что насчет контекста членства?                               :noexport:
+- Вступить в комьюнити?
+- ...просто купи эфир
+- Разрабом стать сложнее, т.к.
+- ...нет формального процесса
+- Майнеру нужен взнос
+*** Community memebership
+Overall an open community. Any body can become a
+token-holder. No visible process exists to become a
+community figure head or online moderator
+*** Developers
+Anybody can start contributing to the development of
+Ethereum. No formal processes are in place to become a
+maintainer. It is likely an informal process through
+recognition for contributor efforts.
+*** Protocol
+Anybody is allowed to run a mining node, a fullnode or
+lightweight node. Running a full noderequires a
+consumer-grade laptop. However,becoming a miner who actively
+proposes newblocks has a high barrier of entry due to
+theexpensive set up costs of hardware.
+** Example of analysis - Etherium Communucation
+*** Коммуникационный контекст                                    :noexport:
+- Нет смысла участвовать, если
+- никто не слушает
+- Оффчейн и ончейн коммуникация
+*** Community
+Communication takes place via Reddit, Twitter,Slack,
+Discord, Gitter, The Ethereum Community Forum, the Ether
+Forum, local meetups, podcasts and events (e.g. the Ethereum
+Community Conference).
+*** Developers
+Developers mostly communicate via the comment system in
+Github and scheduled developer calls. Core developer calls
+are recorded, summarized innotes and publicly
+available. Informal communication occurs during meetups and
+events.
+*** Protocol
+Nodes communicate using a universal data difussion
+model. Data is shared between every node in the
+network. Lightweight nodes needa connection to a full node
+to retrieve information about the blockchain.
+** Example of analysis - Decision making
+*** Контекст принятия решений                                    :noexport:
+- "Я тебя услышал" (с)
+- "Мы посоветовались и я решил" (с)
+- Сигнальные системы
+- И реакции на сигналы
+- В коде все гораздо формальнее...
+*** Community
+Signaling systems for the community exist in the form of
+Carbon votes and twitter polls. Furthermore, they can voice
+the iropinion through posting in the communication channels,
+selling their Ether and supporting potential hard forks of
+developers
+*** Developers
+The two formal mechanisms through which developers in
+Ethereum make decisions are the EIP processon Github and core
+developer calls every other week. Community signaling systems
+serve as input during the calls
+*** Protocol
+The consensus mechanism in Ethereum is Proof-of-Work. Miners
+can signal their preference on contentious development
+decisions using an optional data field in blocks. Network
+capacity can be automatically adjusted by a miner gas vote
+* Conclusion
+** Что в итоге                                                    :noexport:
+- у нас есть интересные примеры
+- но все они имеют слабые места
+- также теперь есть модель для анализа
+- и мы можем дешево ее применить
+- для построения решения для себя
+- избегая вендор-лока
+- и конфликта интересов с вендором
+- (стоит проанализировать затраты)
+** Conclusion
+- As a result of the analysis according to the above scheme,
+  we can build a DAO solution on our own or within the
+  framework of the vendor's infrastructure.
+- Having formally built all the invariants, we can discuss and
+  implement the project of such a DAO and avoid the vendor
+  lock. But, it will take time to audit.
+- Potential savings and costs should be assessed
+- As part of this work, we could develop Colony-style
+  off-chain recurrent polls that do not require a quorum if
+  there is no objection.
+#+ATTR_LATEX: :width 0.4\textwidth
+file:bender.png
